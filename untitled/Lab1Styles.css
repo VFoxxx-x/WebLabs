@@ -1,0 +1,141 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f6f9fc;
+    margin: 0;
+    /* отступ снизу, чтобы футер не перекрывал контент */
+    padding: 0 0 60px 0;
+    color: #333;
+}
+
+header {
+    background-color: #004080;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    background-color: #e6f0ff;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #004080;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+section {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    /* Требование */
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h1, h2, h3 {
+    color: #004080;
+}
+
+ul {
+    padding-left: 20px;
+    list-style-type: none;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #004080;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+.post {
+    background-color: #f9f9f9;
+    border-left: 4px solid #3498db;
+}
+
+.post h2 {
+    color: #2c3e50;
+}
+
+
+/* Стили для таблицы */
+table {
+    border-collapse: collapse;
+    /* Требование: width */
+    width: 100%;
+}
+
+table, th, td {
+    /* Требование: border */
+    border: 1px solid #ddd;
+}
+
+th, td {
+    /* Требование: padding */
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #004080;
+    color: white;
+}
+
+/* Стили для формы */
+form div {
+    margin-bottom: 15px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Чтобы padding не влиял на общую ширину */
+}
+
+input[type="submit"] {
+    background-color: #004080;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #0059b3;
+}

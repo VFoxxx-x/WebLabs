@@ -1,0 +1,283 @@
+.container {
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+/* Плавное появление строк таблицы */
+@keyframes fadeInRow {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ===== Таблица ===== */
+.table {
+  margin-bottom: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.table thead th {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #dee2e6;
+  transition: background-color 0.2s ease;
+}
+
+.table-hover tbody tr {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(13, 110, 253, 0.05);
+  transform: scale(1.01);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Ячейки */
+.table td, .table th {
+  padding: 1rem 0.75rem;
+  vertical-align: middle;
+}
+
+/* Стиль для номера студента */
+th[scope="row"] {
+  font-weight: 600;
+  color: #6c757d;
+  width: 60px;
+}
+
+/* Стиль для имени */
+.table td:first-of-type {
+  font-weight: 500;
+  color: #212529;
+}
+
+
+/* Стили для компонента ProgressBar */
+.progress-bar-container {
+  background-color: #e9ecef;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 8px;
+  position: relative;
+}
+
+.progress-bar-fill {
+  background: linear-gradient(90deg, #198754, #20c997);
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Анимация "волны" для прогресс-бара */
+.progress-bar-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.3),
+          transparent
+  );
+  transform: translateX(-100%);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Разные цвета для разных диапазонов */
+.progress-bar-fill.high {
+  background: linear-gradient(90deg, #198754, #20c997);
+}
+
+.progress-bar-fill.medium {
+  background: linear-gradient(90deg, #ffc107, #ff9f1a);
+}
+
+.progress-bar-fill.low {
+  background: linear-gradient(90deg, #dc3545, #fd7e14);
+}
+
+/* ===== GradeCell стили ===== */
+/* Ячейки с оценками */
+.grade-cell {
+  font-weight: 600;
+  text-align: center;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  display: inline-block;
+  min-width: 50px;
+}
+
+/* Цвета оценок */
+.grade-excellent {
+  background-color: rgba(25, 135, 84, 0.15);
+  color: #198754;
+}
+
+.grade-good {
+  background-color: rgba(13, 110, 253, 0.15);
+  color: #0d6efd;
+}
+
+.grade-average {
+  background-color: rgba(255, 193, 7, 0.15);
+  color: #ffc107;
+}
+
+.grade-low {
+  background-color: rgba(220, 53, 69, 0.15);
+  color: #dc3545;
+}
+
+/* Ховер для ячейки с оценкой */
+.grade-cell:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Кнопка сортировки ===== */
+.btn-primary {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Эффект "пульсации" при клике */
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-primary:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* ===== Адаптивность ===== */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem !important;
+  }
+
+  .table td, .table th {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .grade-cell {
+    min-width: 40px;
+    font-size: 0.85rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .btn-primary {
+    font-size: 0.85rem;
+    padding: 0.375rem 0.75rem;
+  }
+}
+
+/* ==== Стили для заголовков ===== */
+thead th[colspan] {
+  background-color: #f8f9fa;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* ===== Анимация появления контейнера ===== */
+.container {
+  animation: slideInUp 0.5s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Скролл для таблицы на мобильных ===== */
+.table-responsive {
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+/* Кастомный скроллбар */
+.table-responsive::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* ===== Дополнительные улучшения ===== */
+/* Тень при наведении на строку */
+.motion.tr:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Плавное изменение сортировки */
+.table tbody {
+  transition: all 0.3s ease;
+}
+
+/* Стиль для среднего балла */
+.table td:last-child .grade-cell {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
