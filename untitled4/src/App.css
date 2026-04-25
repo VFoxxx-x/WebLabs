@@ -1,0 +1,10 @@
+body {
+    transition: background-color 0.3s ease;
+}
+.game-panel {
+    min-height: 100vh;
+    padding: 2rem;
+}
+.section-card {
+    margin-bottom: 20px;
+}
